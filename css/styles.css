@@ -1,0 +1,17 @@
+#menu{
+    color: aliceblue;
+    
+}
+
+#foot{
+    height: 50px;
+}
+#foot span{
+    line-height: 50px;
+    margin-left: 40%;
+}
+
+
+#lateral{
+    height: 400px;
+}
