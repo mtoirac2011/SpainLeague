@@ -1,36 +1,61 @@
 from traceback import print_list
 from py.ligatools import *
 from py.menus import *
+from os import system
 import csv
+
+# Check if log file exists    
+checklogfile()
+        
+def laliga():
+    liga_menu = ''
+    while (liga_menu != 'X'):
+        menuLiga()
+        liga_menu = input("Choose the option: ").upper()
+        match liga_menu:
+            case 'L':
+                print ("Option L La Liga")
+            case 'R':
+                print ("Option R --> Real Madrid")
+                
+def realMadrid():
+    rm_menu = ''
+    while (rm_menu != 'X'):
+        menuRM()
+        rm_menu = input("Choose the option: ").upper()
+        match rm_menu:
+            case 'P':
+                print ("Option L List of Players")
+            case 'O':
+                print ("Option R --> Oldest players")
+            case 'N':
+                print ("Option R --> Players by nation")
 
 def main():
     main_menu = ''
     welcomeMenu()
     while (main_menu != 'X'):
-        menuLiga()
+        mainMenu()
         main_menu = input("Choose the option: ").upper()
         match main_menu:
-            case 'P':
-                print ("Option P")
-            case 'C':
-                print ("Option C --> Corners")
-            case 'S':
-                print ("Option S --> Shots")
-            case 'P':
-                print ("Option P")
+            case 'L':
+                print ("Option L La Liga")
+                laliga()
+            case 'R':
+                print ("Option C --> Real Madrid")
+                realMadrid()
+            case 'X':    
+                system("cls")
+                       
+#Work with the liga espanola table file
+#with open('data/2018laliga.csv', newline='') as f:
+#datos = csv.reader(f, delimiter=',')
             
-        # Check if log file exists    
-        checklogfile()
-                
-        #Work with the liga espanola table file
-        with open('data/2018laliga.csv', newline='') as f:
-            datos = csv.reader(f, delimiter=',')
-            
-            listaliga = list(datos)
+#listaliga = list(datos)
 
         
         #menuLiga()
-        #menuClub()
+        #menuRM()
     
 #Execute main.py
 main()

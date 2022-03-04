@@ -14,4 +14,4 @@ with open('data/2018laliga.csv', newline='') as f:
 
 welcomeMenu()
 menuLiga()
-menuClub()
+menuRM()

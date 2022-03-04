@@ -35,7 +35,7 @@ def mainMenu():
     print("│        x - Exit                                │")
     print("│                                                │")
     print("└────────────────────────────────────────────────┘")
-    input("     Press any key to continue...")
+    print("")
     
 def menuLiga():
     system("cls")
@@ -51,7 +51,7 @@ def menuLiga():
     print("│                                                │")
     print("│        x - Exit                                │")
     print("└────────────────────────────────────────────────┘")
-    input("")
+    print("")
     
 def menuRM():
     system("cls")
@@ -59,14 +59,12 @@ def menuRM():
     print("│                                                │")
     print("│        --  Real Madrid Menu --                 │")
     print("│                                                │")
-    print("│        p - List players                        │")
+    print("│        p - List of players                     │")
     print("│                                                │")
-    print("│        b - Best soccer start leyend            │")
+    print("│        o - Oldest players                      │")
     print("│                                                │")
-    print("│        o - Best soccer start leyend (by Name)  │")
-    print("│                                                │")
-    print("│        q - List soccer quotes                  │")
+    print("│        n - Players by nation                   │")
     print("│                                                │")
     print("│        x - Exit                                │")
     print("└────────────────────────────────────────────────┘")
-    input("")
+    print("")
