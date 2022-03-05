@@ -16,8 +16,9 @@ def positionstable():
     try:
         with open('data/2018laliga.csv', newline='') as f:
             datos = csv.reader(f, delimiter=',')
-            ligalist = list(datos)
-            positionsTablePrint(ligalist)
+            #Avoid Header
+            headings = next(datos)              
+            positionsTablePrint(list(datos))
     except:
         print("The file does not exists...\n")        
 

@@ -12,22 +12,25 @@ def checklogfile():
     else:
         try:
             with open('docs/filelog.txt', 'w') as f:
-                f.write('Creating the log file!, ' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
+                f.write('Creating the log file!, ' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())+ '\r\n')
         except FileNotFoundError:
             input("The 'docs' directory does not exist...")  
 
 def printlogfile(texto):
-    with open('docs/filelog.txt', 'w') as f:
-        f.write(texto +', ' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()))
+    with open('docs/filelog.txt', 'a') as f:
+        f.write(texto +', ' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime()) + '\r')
             
 def pressAnyKey():
+    print("")
     input("     Press any key to continue...")
 
 def positionsTablePrint(ligalist):
     positionsTableHeader()
-    for i in range(len(ligalist)):
-        print(ligalist[i][1].center(8), ligalist[i][2].ljust(15), ligalist[i][3].center(7),\
-            ligalist[i][4].center(4), ligalist[i][5].center(5), ligalist[i][6].center(5),\
-            ligalist[i][9].center(3))
-        print("")
-
+    try: 
+        for i in range(len(ligalist)):
+            print(ligalist[i][1].center(9), ligalist[i][2].ljust(15), ligalist[i][3].center(7),\
+                ligalist[i][4].center(4), ligalist[i][5].center(5), ligalist[i][6].center(5),\
+                ligalist[i][9].center(3))
+        printlogfile("Table positions was printed")
+    except:
+        print("Error printing file...")
