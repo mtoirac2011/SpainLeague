@@ -1,4 +1,5 @@
 from os import system
+from py.ligatools import *
 
 def welcomeMenu():
     system("cls")
@@ -18,7 +19,7 @@ def welcomeMenu():
     print("│                                                │")
     print("│                   Good luck!                   │")
     print("└────────────────────────────────────────────────┘")
-    input("     Press any key to continue...")
+    #pressAnyKey()
     
 def mainMenu():
     system("cls")
@@ -68,3 +69,20 @@ def menuRM():
     print("│        x - Exit                                │")
     print("└────────────────────────────────────────────────┘")
     print("")
+    
+def menuGoodBye():
+    system("cls")
+    print("┌────────────────────────────────────────────────┐")
+    print("│                                                │")
+    print("│                                                │")
+    print("│              Good bye...!                      │")
+    print("│                                                │")
+    print("│                                                │")
+    print("└────────────────────────────────────────────────┘")
+    print("")
+    
+def positionsTableHeader():
+    system("cls")
+    print("┌─────────────────────────────────────────────────────┐")
+    print("│Position Team            Matches Wins Draws Loses Pts│")
+    print("└─────────────────────────────────────────────────────┘")    

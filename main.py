@@ -1,8 +1,12 @@
 from traceback import print_list
 from py.ligatools import *
 from py.menus import *
+from py.laliga import *
 from os import system
 import csv
+
+#clean the screen
+system("cls")
 
 # Check if log file exists    
 checklogfile()
@@ -13,10 +17,14 @@ def laliga():
         menuLiga()
         liga_menu = input("Choose the option: ").upper()
         match liga_menu:
-            case 'L':
+            case 'P':
                 print ("Option L La Liga")
-            case 'R':
+                positionstable()
+            case 'C':
                 print ("Option R --> Real Madrid")
+            case 'S':
+                print ("Option L La Liga")
+
                 
 def realMadrid():
     rm_menu = ''
@@ -45,7 +53,7 @@ def main():
                 print ("Option C --> Real Madrid")
                 realMadrid()
             case 'X':    
-                system("cls")
+                menuGoodBye()
                        
 #Work with the liga espanola table file
 #with open('data/2018laliga.csv', newline='') as f:
