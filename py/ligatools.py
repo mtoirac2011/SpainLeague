@@ -34,3 +34,12 @@ def positionsTablePrint(ligalist):
         printlogfile("Table positions was printed")
     except:
         print("Error printing file...")
+
+def moreShotsPrint(ligalist):
+    moreShotsHeader()
+    try: 
+        for i in range(len(ligalist)):
+            print(" ", ligalist[i][2].ljust(15), ligalist[i][11].center(5))
+        printlogfile("Teams with more shots was printed")
+    except:
+        print("Error printing file...")    

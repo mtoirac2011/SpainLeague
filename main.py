@@ -17,12 +17,11 @@ def laliga():
         menuLiga()
         liga_menu = input("Choose the option: ").upper()
         match liga_menu:
-            case 'P':
-                print ("Option L La Liga")
-                positionstable()
-            case 'C':
-                print ("Option R --> Real Madrid")
+            case 'P':                
+                positionsTable()
             case 'S':
+                moreShots()
+            case 'V':
                 print ("Option L La Liga")
 
                 

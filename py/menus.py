@@ -46,9 +46,9 @@ def menuLiga():
     print("│                                                │")
     print("│        p - Positions table                     │")
     print("│                                                │")
-    print("│        c - Teams with more corners             │")
-    print("│                                                │")
     print("│        s - Teams with more shots               │")
+    print("│                                                │")
+    print("│        v - Visualizing teams with more shots   │")
     print("│                                                │")
     print("│        x - Exit                                │")
     print("└────────────────────────────────────────────────┘")
@@ -86,3 +86,9 @@ def positionsTableHeader():
     print("┌─────────────────────────────────────────────────────┐")
     print("│Position Team            Matches Wins Draws Loses Pts│")
     print("└─────────────────────────────────────────────────────┘")    
+
+def moreShotsHeader():
+    system("cls")
+    print("┌─────────────────────┐")
+    print("│Team            Shots│")
+    print("└─────────────────────┘")    
