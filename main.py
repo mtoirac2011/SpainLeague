@@ -1,7 +1,7 @@
-from traceback import print_list
-from py.ligatools import *
-from py.menus import *
-from py.laliga import *
+from multiprocessing.spawn import prepare
+from src.ligatools import *
+from src.menus import *
+from src.laliga import *
 from os import system
 import csv
 
@@ -41,6 +41,7 @@ def realMadrid():
 def main():
     main_menu = ''
     welcomeMenu()
+    pressAnyKey()
     while (main_menu != 'X'):
         mainMenu()
         main_menu = input("Choose the option: ").upper()
@@ -53,16 +54,5 @@ def main():
                 realMadrid()
             case 'X':    
                 menuGoodBye()
-                       
-#Work with the liga espanola table file
-#with open('data/2018laliga.csv', newline='') as f:
-#datos = csv.reader(f, delimiter=',')
-            
-#listaliga = list(datos)
 
-        
-        #menuLiga()
-        #menuRM()
-    
-#Execute main.py
 main()

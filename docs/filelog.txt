@@ -1,3 +1,2 @@
-Creating the log file!, 2022-03-05 10:37:54
-Table positions was printed, 2022-03-05 10:38:02
-Table positions was printed, 2022-03-05 10:39:18Table positions was printed, 2022-03-05 10:39:28Table positions was printed, 2022-03-05 10:47:06Table positions was printed, 2022-03-06 09:23:49Table positions was printed, 2022-03-06 10:15:16Table positions was printed, 2022-03-06 11:09:06Table positions was printed, 2022-03-06 11:10:59Table positions was printed, 2022-03-06 11:12:25Table positions was printed, 2022-03-06 11:12:56Table positions was printed, 2022-03-06 11:13:38Teams with more shots was printed, 2022-03-06 11:15:18Teams with more shots was printed, 2022-03-06 11:16:05
+Creating the log file!, 2022-03-07 19:49:06
+Table positions was printed, 2022-03-08 16:49:38Teams with more shots was printed, 2022-03-08 16:49:41
