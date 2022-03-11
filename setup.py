@@ -55,4 +55,4 @@ def main():
             case 'X':    
                 menuGoodBye()
 
-main()
+setup()
