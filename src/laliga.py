@@ -5,7 +5,7 @@ from os import system
 import csv
 import operator
 
-ligalist = []
+#ligalist = []
 
 class ListaLiga():
     
@@ -34,6 +34,19 @@ def moreShots():
             headings = next(datos)  
             sortList = list(datos)               
             moreShotsPrint(sorted(sortList , key=operator.itemgetter(11), reverse=True))
+    except:
+        print("The file does not exists...\n")        
+
+    pressAnyKey()
+    
+    
+def shotsTarget():
+    try:
+        with open('data/2018laliga.csv', newline='') as f:
+            datos = csv.reader(f, delimiter=',')
+            #Avoid Header
+            headings = next(datos)                
+            shotsTargetGraph(list(datos))
     except:
         print("The file does not exists...\n")        
 

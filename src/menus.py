@@ -80,12 +80,35 @@ def menuGoodBye():
     
 def positionsTableHeader():
     system("cls")
+    print("                  Spain League Teams")
     print("┌─────────────────────────────────────────────────────┐")
     print("│Position Team            Matches Wins Draws Loses Pts│")
     print("└─────────────────────────────────────────────────────┘")    
 
 def moreShotsHeader():
     system("cls")
+    print("Teams with more shots")
     print("┌─────────────────────┐")
     print("│Team            Shots│")
     print("└─────────────────────┘")    
+
+def listPlayersHeader():
+    system("cls")
+    print("     Real Madrid players")
+    print("┌────────────────────────────┐")
+    print("│Player            Nation Age│")
+    print("└────────────────────────────┘")    
+
+def sortByAgeHeader():
+    system("cls")
+    print("    Oldest players")
+    print("┌─────────────────────┐")
+    print("│Player            Age│")
+    print("└─────────────────────┘")    
+
+def groupNationHeader():
+    system("cls")
+    print("Group by nations")
+    print("┌───────────────┐")
+    print("│Nation    Count│")
+    print("└───────────────┘")    

@@ -1,13 +1,14 @@
 import os
 import time
 from src.menus import *
+import matplotlib as plt
 
 def checklogfile():
     # Check if log file exists
     fileName = r"docs/filelog.txt"
-    existelogfile = os.path.isfile(fileName)
+    existslogfile = os.path.isfile(fileName)
 
-    if existelogfile:
+    if existslogfile:
         input('The log file already exists, and it is ready to be used... ')
     else:
         try:
@@ -34,6 +35,7 @@ def positionsTablePrint(ligalist):
         printlogfile("Table positions was printed")
     except:
         print("Error printing file...")
+        printlogfile("Error printing table positions")
 
 def moreShotsPrint(ligalist):
     moreShotsHeader()
@@ -42,4 +44,61 @@ def moreShotsPrint(ligalist):
             print(" ", ligalist[i][2].ljust(15), ligalist[i][11].center(5))
         printlogfile("Teams with more shots was printed")
     except:
-        print("Error printing file...")    
+        print("Error printing file...")   
+        printlogfile("Error printing Teams with more shots") 
+        
+def shotsTargetGraph(ligalist):
+    try:
+        ligalist[['Team','Shots', 'S_OnTarget']].plot(kind='bar', title='Shots vs on_target')
+    except:
+        print("Error printing file...")
+    
+def listPlayersPrint(playerlist):
+    listPlayersHeader()
+    try: 
+        for i in range(len(playerlist)):
+            print(" " + playerlist[i][1].ljust(17), playerlist[i][2].ljust(6), playerlist[i][4].center(3))
+        printlogfile("List of players was printed")
+    except:
+        print("Error listing players...")
+        printlogfile("Error listing players")
+        
+def sortByAgePrint(playerlist):
+    sortByAgeHeader()
+    try: 
+        for i in range(len(playerlist)):
+            print(" " + playerlist[i][1].ljust(17), playerlist[i][4].center(3))
+        printlogfile("Oldest players was printed")
+    except:
+        print("Error printing oldest players...")
+        printlogfile("Error listing oldest players")
+        
+def groupByNation(nationslist):
+    res = [] 
+    temp = dict() 
+    try:
+        for ele in nationslist: 
+            if ele in temp: 
+                temp[ele] = temp[ele] + 1 
+            else :  
+                temp[ele] = 1
+        for key in temp: 
+            res.append((key, temp[key])) 
+        printlogfile("Grouping by nations done")
+    except:
+        print("Error grouping by nations....")
+        printlogfile("Error grouping by nations....")
+        
+    return res
+
+def groupByNationPrint(mytupla):
+    groupNationHeader()
+    try: 
+        for nation in mytupla:
+            print(" " + nation[0].ljust(9), str(nation[1]).center(6))
+        printlogfile("Players by nation were printed")
+    except:
+        print("Error printing players by by nations...")
+        printlogfile("Error printing players by nations ...")
+
+    

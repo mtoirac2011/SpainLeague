@@ -2,6 +2,7 @@ from multiprocessing.spawn import prepare
 from src.ligatools import *
 from src.menus import *
 from src.laliga import *
+from src.realmadrid import *
 from os import system
 import csv
 
@@ -22,9 +23,8 @@ def laliga():
             case 'S':
                 moreShots()
             case 'V':
-                print ("Option L La Liga")
+                shotsTargetGraph()
 
-                
 def realMadrid():
     rm_menu = ''
     while (rm_menu != 'X'):
@@ -32,11 +32,11 @@ def realMadrid():
         rm_menu = input("Choose the option: ").upper()
         match rm_menu:
             case 'P':
-                print ("Option L List of Players")
+                listPlayers()
             case 'O':
-                print ("Option R --> Oldest players")
+                sortByAge()
             case 'N':
-                print ("Option R --> Players by nation")
+                sortByNation()
 
 def main():
     main_menu = ''
@@ -47,12 +47,10 @@ def main():
         main_menu = input("Choose the option: ").upper()
         match main_menu:
             case 'L':
-                print ("Option L La Liga")
                 laliga()
             case 'R':
-                print ("Option C --> Real Madrid")
                 realMadrid()
             case 'X':    
                 menuGoodBye()
 
-setup()
+main()
