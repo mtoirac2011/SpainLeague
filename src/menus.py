@@ -115,6 +115,7 @@ def groupNationHeader():
 
 def convertMenu():
     system("cls")
+    print("         Welcome to the Convert Menu")
     print("┌────────────────────────────────────────────────┐")
     print("│              From a number to type,            │")
     print("│        the converter will show you the         │")

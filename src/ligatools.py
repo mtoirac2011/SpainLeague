@@ -1,7 +1,7 @@
 import os
 import time
 from src.menus import *
-import matplotlib as plt
+import re
 
 def checklogfile():
     # Check if log file exists
@@ -95,14 +95,31 @@ def groupByNationPrint(mytupla):
         print("Error printing players by by nations...")
         printlogfile("Error printing players by nations ...")
 
+def if_integer(string):
+    
+    reg_exp = "[-+]?\d+$"
+    return re.match(reg_exp, string) is not None
+
+def farToCelcious(value):
+    return str(round((value - 32.0) * 5 / 9, 2))         
+
+def milesToKm(value):
+    return str(round(value * 1.60934, 2))              
+
+def feetToMeter(value):
+    return str(round(value * 0.3048, 2))
+
+def meterToCm(value):
+    return str(round(value * 100, 2))
+
 def doConvertPrint(value):
     doConvertPrintHeader()
     try: 
-        print("You typed:     ", str(value))
+        print("        You typed:     ", str(value))
         print("──────────────────────────────")
         print("Fahrenheit to celsius: ", farToCelcious(value))
         print("Miles to kilometers:   ", milesToKm(value))
-        print("Feet to meters:        ", milesToKm(value))
+        print("Feet to meters:        ", feetToMeter(value))
         print("Meters to centimeters: ", meterToCm(value))
         print("──────────────────────────────")
         printlogfile("Convertions were printed")
