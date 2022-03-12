@@ -39,15 +39,3 @@ def moreShots():
 
     pressAnyKey()
     
-    
-def shotsTarget():
-    try:
-        with open('data/2018laliga.csv', newline='') as f:
-            datos = csv.reader(f, delimiter=',')
-            #Avoid Header
-            headings = next(datos)                
-            shotsTargetGraph(list(datos))
-    except:
-        print("The file does not exists...\n")        
-
-    pressAnyKey()

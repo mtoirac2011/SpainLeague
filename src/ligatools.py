@@ -9,13 +9,13 @@ def checklogfile():
     existslogfile = os.path.isfile(fileName)
 
     if existslogfile:
-        input('The log file already exists, and it is ready to be used... ')
+        print('The log file already exists, and it is ready to be used... ')
     else:
         try:
             with open('docs/filelog.txt', 'w') as f:
                 f.write('Creating the log file!, ' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())+ '\r\n')
         except FileNotFoundError:
-            input("The 'docs' directory does not exist...")  
+            print("The 'docs' directory does not exist...")  
 
 def printlogfile(texto):
     with open('docs/filelog.txt', 'a') as f:
@@ -46,13 +46,7 @@ def moreShotsPrint(ligalist):
     except:
         print("Error printing file...")   
         printlogfile("Error printing Teams with more shots") 
-        
-def shotsTargetGraph(ligalist):
-    try:
-        ligalist[['Team','Shots', 'S_OnTarget']].plot(kind='bar', title='Shots vs on_target')
-    except:
-        print("Error printing file...")
-    
+         
 def listPlayersPrint(playerlist):
     listPlayersHeader()
     try: 

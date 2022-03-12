@@ -22,8 +22,6 @@ def laliga():
                 positionsTable()
             case 'S':
                 moreShots()
-            case 'V':
-                shotsTargetGraph()
 
 def realMadrid():
     rm_menu = ''

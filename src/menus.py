@@ -45,8 +45,6 @@ def menuLiga():
     print("│                                                │")
     print("│        s - Teams with more shots               │")
     print("│                                                │")
-    print("│        v - Visualizing teams with more shots   │")
-    print("│                                                │")
     print("│        x - Exit                                │")
     print("└────────────────────────────────────────────────┘")
     print("")
