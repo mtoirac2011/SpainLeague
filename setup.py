@@ -3,6 +3,7 @@ from src.ligatools import *
 from src.menus import *
 from src.laliga import *
 from src.realmadrid import *
+from src.convert import *
 from os import system
 import csv
 
@@ -22,7 +23,7 @@ def laliga():
                 positionsTable()
             case 'S':
                 moreShots()
-
+            
 def realMadrid():
     rm_menu = ''
     while (rm_menu != 'X'):
@@ -34,8 +35,19 @@ def realMadrid():
             case 'O':
                 sortByAge()
             case 'N':
-                sortByNation()
+                sortByNation()               
 
+def convert():
+    convert_menu = ''
+    while (convert_menu != 'X'):
+        convertMenu()
+        convert_menu = input("Type a number to convert: ").upper()
+        
+        if (if_integer(convert_menu)):
+            if int(convert_menu) > 0:
+                doconvert(int(convert_menu))
+                
+        
 def main():
     main_menu = ''
     welcomeMenu()
@@ -48,7 +60,10 @@ def main():
                 laliga()
             case 'R':
                 realMadrid()
+            case 'C':
+                convert()
             case 'X':    
                 menuGoodBye()
+
 
 main()

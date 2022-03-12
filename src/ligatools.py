@@ -95,4 +95,17 @@ def groupByNationPrint(mytupla):
         print("Error printing players by by nations...")
         printlogfile("Error printing players by nations ...")
 
-    
+def doConvertPrint(value):
+    doConvertPrintHeader()
+    try: 
+        print("You typed:     ", str(value))
+        print("──────────────────────────────")
+        print("Fahrenheit to celsius: ", farToCelcious(value))
+        print("Miles to kilometers:   ", milesToKm(value))
+        print("Feet to meters:        ", milesToKm(value))
+        print("Meters to centimeters: ", meterToCm(value))
+        print("──────────────────────────────")
+        printlogfile("Convertions were printed")
+    except:
+        print("Error printing convertions...")
+        printlogfile("Error printing convertions")

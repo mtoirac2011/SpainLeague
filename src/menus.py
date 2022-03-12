@@ -30,6 +30,8 @@ def mainMenu():
     print("│                                                │")
     print("│        r - Real Madrid Menu                    │")
     print("│                                                │")
+    print("│        c - Convert Menu                        │")
+    print("│                                                │")
     print("│        x - Exit                                │")
     print("│                                                │")
     print("└────────────────────────────────────────────────┘")
@@ -110,3 +112,24 @@ def groupNationHeader():
     print("┌───────────────┐")
     print("│Nation    Count│")
     print("└───────────────┘")    
+
+def convertMenu():
+    system("cls")
+    print("┌────────────────────────────────────────────────┐")
+    print("│              From a number to type,            │")
+    print("│        the converter will show you the         │")
+    print("│            corresponding values:               │")
+    print("│                                                │")
+    print("│            * Fahrenheit to celsius             │")
+    print("│            * Miles to kilometers               │")
+    print("│            * Feet to meters                    │")
+    print("│            * Meters to centimeters             │")
+    print("│                                                │")
+    print("│                                   X to Exit    │")
+    print("└────────────────────────────────────────────────┘")
+    
+def doConvertPrintHeader():
+    system("cls")
+    print(" These are the convertions for your number")
+    print("───────────────────────────────────────────")
+    print("")
