@@ -4,6 +4,7 @@ from src.menus import *
 from src.laliga import *
 from src.realmadrid import *
 from src.convert import *
+from src.utilities import *
 from os import system
 import csv
 
@@ -47,7 +48,19 @@ def convert():
             if int(convert_menu) > 0:
                 doconvert(int(convert_menu))
                 
-        
+def utilities():
+    util_menu = ''
+    while (util_menu != 'X'):
+        utilitiesMenu()
+        util_menu = input("Choose the option: ").upper()
+        match util_menu:
+            case 'L':
+                loadTable()
+            case 'O':
+                sortByAge()
+            case 'N':
+                sortByNation() 
+                        
 def main():
     main_menu = ''
     welcomeMenu()
@@ -62,6 +75,8 @@ def main():
                 realMadrid()
             case 'C':
                 convert()
+            case 'U':
+                utilities()
             case 'X':    
                 menuGoodBye()
 
