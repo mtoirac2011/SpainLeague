@@ -1,3 +1,4 @@
+from optparse import Values
 from traceback import print_list
 from src.ligatools import *
 from src.menus import *
@@ -24,8 +25,6 @@ def loadTable():
     except:
         print("Error creating connection ...")
         printlogfile("Error creating connection to SQL Server...")
-        
-    pressAnyKey()
     
     #Creating cursor   
     cursor = conn.cursor()
@@ -38,5 +37,27 @@ def loadTable():
     for row in cursor:
         mydict[row[0]] = row[1]
 
-    print(mydict)     
+    return mydict     
+    
+def selectPlayer():
+    playerDict = {}
+    playerDict = loadTable()
+    
+    print(playerDict)
     pressAnyKey()
+    
+    until = len(playerDict)
+    
+    index=1
+    while index <= len(playerDict):
+        indexStr = str(index).ljust(2)
+        indexMasUnoStr = str(index + 1).ljust(2)
+        indexMasDosStr = str(index + 2).ljust(2)
+        print(indexStr + " -> "+ playerDict[indexStr].ljust(17) +" │  "+ indexMasUnoStr + " -> "+ playerDict[indexMasUnoStr].ljust(17) +" │  "+ indexMasDosStr + " -> "+ playerDict[indexMasDosStr].ljust(17))
+        
+        if (index + 4) >= len(playerDict):
+            break
+        index+=3
+        
+    pressAnyKey()
+   
