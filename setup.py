@@ -53,8 +53,6 @@ def utilities():
         utilitiesMenu()
         util_menu = input("Choose the option: ").upper()
         match util_menu:
-            case 'L':
-                loadTable()
             case 'S':
                 selectPlayer()
             case 'N':
