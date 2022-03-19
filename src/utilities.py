@@ -20,7 +20,6 @@ def loadTable():
                             'Server=PC-MIN;'
                             'Database=laligadb;'
                             'Trusted_Connection=yes;')
-        print("Connection created ...")
         printlogfile("Creating connection to SQL Server...")
     except:
         print("Error creating connection ...")
@@ -64,12 +63,23 @@ def showPlayers(playerDict):
                            
             break
         index+=3
-    
+
+def printBlankLines(num):
+    i = 1
+    while (num >= i):
+        i+=1
+        print()
+
 def selectPlayer():
+    system("cls")
+    printBlankLines(10)
+    print("                  Loading players from SQL Server ...")
     playerDict = {}
     playerDict = loadTable()
 
-    #Loop for utilities
+    #Showing players by screen...
+    system("cls")
+    print("Showing players by screen...")
     utility_menu = ''
     while (utility_menu != 'X'):
         #Show players to be selected
@@ -82,12 +92,13 @@ def selectPlayer():
             print('')
             playerSelected = input("Select the player by choosing a valid number (x-Exit): ").upper()
             if (if_integer(playerSelected)):
-                if (int(playerSelected) > 0 and int(playerSelected) < 36):
-                    playerName = playerDict[playerSelected]
+                if (int(playerSelected) > 0 and int(playerSelected) < 36):                    
+                    playerName = playerDict[playerSelected.ljust(2)]
                     
                     #Process
                     system("cls")
-                    print("You have selected: " + playerName.ljust(17) )
+                    playerToShow = "You have selected: " + playerName
+                    print(playerToShow.center(41))
                     print("┌─────────────────────────────────────────┐")
                     print("│                                         │")
                     print("│ Last letter:          "+playerName[len(playerName)-1]+"                 │")
