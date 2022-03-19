@@ -63,7 +63,8 @@ def showPlayers(playerDict):
                            
             break
         index+=3
-
+    print("                                                       x -> Exit")
+    
 def printBlankLines(num):
     i = 1
     while (num >= i):
@@ -90,7 +91,7 @@ def selectPlayer():
         playerName = ' '
         while True:
             print('')
-            playerSelected = input("Select the player by choosing a valid number (x-Exit): ").upper()
+            playerSelected = input("Select the player by choosing a valid number: ").upper()
             if (if_integer(playerSelected)):
                 if (int(playerSelected) > 0 and int(playerSelected) < 36):                    
                     playerName = playerDict[playerSelected.ljust(2)]
@@ -108,9 +109,10 @@ def selectPlayer():
                     print("│ Upper Case:           "+playerName.upper().ljust(17)+ " │")
                     print("│ Reversing the Name:   "+playerName[::-1].ljust(17)+" │")
                     print("│                                         │")
+                    print("│                                 x-Exit  │")
                     print("└─────────────────────────────────────────┘")
                     print('')
-                    utility_menu = input("Do you want to select another player y/x? x-Exit ").upper()
+                    utility_menu = input("  Press ENTER to select another player... ").upper()
                     break
             elif (playerSelected == 'X'):
                 utility_menu = 'X'

@@ -115,13 +115,13 @@ def meterToCm(value):
 def doConvertPrint(value):
     doConvertPrintHeader()
     try: 
-        print("        You typed:     ", str(value))
-        print("──────────────────────────────")
-        print("Fahrenheit to celsius: ", farToCelcious(value))
-        print("Miles to kilometers:   ", milesToKm(value))
-        print("Feet to meters:        ", feetToMeter(value))
-        print("Meters to centimeters: ", meterToCm(value))
-        print("──────────────────────────────")
+        print("             You typed:     ", str(value))
+        print("     ──────────────────────────────")
+        print("     Fahrenheit to celsius: ", farToCelcious(value))
+        print("     Miles to kilometers:   ", milesToKm(value))
+        print("     Feet to meters:        ", feetToMeter(value))
+        print("     Meters to centimeters: ", meterToCm(value))
+        print("     ──────────────────────────────")
         printlogfile("Convertions were printed")
     except:
         print("Error printing convertions...")

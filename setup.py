@@ -42,7 +42,7 @@ def convert():
     convert_menu = ''
     while (convert_menu != 'X'):
         convertMenu()
-        convert_menu = input("Type a number to convert: ").upper()        
+        convert_menu = input("           Type a number: ").upper()        
         if (if_integer(convert_menu)):
             if int(convert_menu) > 0:
                 doconvert(int(convert_menu))
