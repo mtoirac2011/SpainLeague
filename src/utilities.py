@@ -91,7 +91,7 @@ def selectPlayer():
         playerName = ' '
         while True:
             print('')
-            playerSelected = input("Select the player by choosing a valid number: ").upper()
+            playerSelected = input("Select a player by choosing a valid number: ").upper()
             if (if_integer(playerSelected)):
                 if (int(playerSelected) > 0 and int(playerSelected) < 36):                    
                     playerName = playerDict[playerSelected.ljust(2)]
