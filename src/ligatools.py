@@ -118,9 +118,14 @@ def doConvertPrint(value):
         print("             You typed:     ", str(value))
         print("     ──────────────────────────────")
         print("     Fahrenheit to celsius: ", farToCelcious(value))
-        print("     Miles to kilometers:   ", milesToKm(value))
-        print("     Feet to meters:        ", feetToMeter(value))
-        print("     Meters to centimeters: ", meterToCm(value))
+        if (value >= 0):
+            print("     Miles to kilometers:   ", milesToKm(value))
+            print("     Feet to meters:        ", feetToMeter(value))
+            print("     Meters to centimeters: ", meterToCm(value))
+        else:
+            print("     Miles to kilometers:   ", "  -")
+            print("     Feet to meters:        ", "  -")
+            print("     Meters to centimeters: ", "  -")
         print("     ──────────────────────────────")
         printlogfile("Convertions were printed")
     except:
