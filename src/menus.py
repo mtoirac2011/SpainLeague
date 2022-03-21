@@ -65,7 +65,7 @@ def menuRM():
     print("│                                                │")
     print("│        p - List of players                     │")
     print("│                                                │")
-    print("│        o - Oldest players                      │")
+    print("│        o - Oldest players  (30 or more..)      │")
     print("│                                                │")
     print("│        n - Players by nation                   │")
     print("│                                                │")

@@ -44,7 +44,6 @@ def convert():
         convertMenu()
         convert_menu = input("           Type a number: ").upper()        
         if (if_integer(convert_menu)):
-            #if int(convert_menu) > 0:
             doconvert(int(convert_menu))
                 
 def utilities():

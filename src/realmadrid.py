@@ -20,7 +20,8 @@ def listPlayers():
             headings = next(datos)              
             listPlayersPrint(list(datos))
     except:
-        print("The file does not exists...\n")        
+        print("The file does not exists...\n") 
+        printlogfile("The file does not exists...")       
 
     pressAnyKey()
     
@@ -32,19 +33,25 @@ def sortByAge():
             headings = next(datos)              
             sortByAgePrint(sortByAgeDesc(list(datos)))
     except:
-        print("The file does not exists...\n")        
+        print("The file does not exists...\n")   
+        printlogfile("The file does not exists")      
 
     pressAnyKey()
     
 def sortByAgeDesc(playerlist):
     mylist=[]
     try:
-       # mylist = playerlist.sort_values(by='Age',inplace=True,ascending=False)
         mylist = sorted(playerlist , key=operator.itemgetter(4), reverse=True)
     except:
         print("Error sorting player list...")  
-        
-    return mylist
+        printlogfile("Error sorting player list")  
+    
+    returnList = []    
+    for oldest in mylist:
+        if int(oldest[4]) > 29:
+            returnList.append(oldest) 
+    
+    return returnList
 
 def sortByNation():
     try:
@@ -68,6 +75,7 @@ def sortByNation():
             #Printing players by nation
             groupByNationPrint(newtupla)
     except:
-        print("The file does not exists...\n")        
+        print("The file does not exists...\n")  
+        printlogfile("The file does not exists")       
 
     pressAnyKey()
