@@ -16,27 +16,28 @@ class Utilities():
 def loadTable():
     #Creating connection 
     try:
+        print("                  Loading players from SQL Server ...")
         conn = pyodbc.connect('Driver={SQL Server};'
                             'Server=PC-MIN;'
                             'Database=laligadb;'
                             'Trusted_Connection=yes;')
         printlogfile("Creating connection to SQL Server...")
+        #Creating cursor   
+        cursor = conn.cursor()
+        
+        #Executin query  
+        cursor.execute('SELECT * FROM laligadb.dbo.t_realmadrid')
+            
+        #Creating a dict
+        mydict = {}
+        for row in cursor:
+            mydict[row[0]] = row[1]
     except:
-        print("Error creating connection ...")
+        mydict = {}
+        print("\nError creating connection ...")
         printlogfile("Error creating connection to SQL Server...")
         pressAnyKey()
     
-    #Creating cursor   
-    cursor = conn.cursor()
-    
-    #Executin query  
-    cursor.execute('SELECT * FROM laligadb.dbo.t_realmadrid')
-        
-    #Creating a dict
-    mydict = {}
-    for row in cursor:
-        mydict[row[0]] = row[1]
-
     return mydict    
 
 def showPlayers(playerDict):
@@ -74,48 +75,50 @@ def printBlankLines(num):
 def selectPlayer():
     system("cls")
     printBlankLines(10)
-    print("                  Loading players from SQL Server ...")
+    #Connecting to the SQL Server Database and creating Dict
     playerDict = {}
     playerDict = loadTable()
 
-    #Showing players by screen...
-    system("cls")
-    print("Showing players by screen...")
-    utility_menu = ''
-    while (utility_menu != 'X'):
-        #Show players to be selected
+    #Check if the dict is empty
+    if ((len(playerDict)) > 0):
+        pass
+        #Showing players by screen...
         system("cls")
-        showPlayers(playerDict)    
-    
-        playerSelected = ' '
-        playerName = ' '
-        while True:
-            print('')
-            playerSelected = input("Select a player by choosing a valid number: ").upper()
-            if (if_integer(playerSelected)):
-                if (int(playerSelected) > 0 and int(playerSelected) < 36):                    
-                    playerName = playerDict[playerSelected.ljust(2)]
-                    
-                    #Process
-                    system("cls")
-                    playerToShow = "You have selected: " + playerName
-                    print(playerToShow.center(41))
-                    print("┌─────────────────────────────────────────┐")
-                    print("│                                         │")
-                    print("│ Last letter:          "+playerName[len(playerName)-1]+"                 │")
-                    print("│ First letter:         "+playerName[0]+"                 │")
-                    print("│ Length of the Name:   "+ str(len(playerName)).center(2) +"                │")
-                    print("│ Lower Case:           "+playerName.lower().ljust(17)+ " │")
-                    print("│ Upper Case:           "+playerName.upper().ljust(17)+ " │")
-                    print("│ Reversing the Name:   "+playerName[::-1].ljust(17)+" │")
-                    print("│                                         │")
-                    print("│                                 x-Exit  │")
-                    print("└─────────────────────────────────────────┘")
-                    print('')
-                    utility_menu = input("  Press ENTER to select another player... ").upper()
+        print("Showing players by screen...")
+        utility_menu = ''
+        while (utility_menu != 'X'):
+            #Show players to be selected
+            system("cls")
+            showPlayers(playerDict)    
+            #Variables to store results
+            playerSelected = ' '
+            playerName = ' '
+            while True:
+                print('')
+                playerSelected = input("Select a player by choosing a valid number: ").upper()
+                if (if_integer(playerSelected)):
+                    if (int(playerSelected) > 0 and int(playerSelected) < 36):                    
+                        playerName = playerDict[playerSelected.ljust(2)]
+                        #Process
+                        system("cls")
+                        playerToShow = "You have selected: " + playerName
+                        print(playerToShow.center(41))
+                        print("┌─────────────────────────────────────────┐")
+                        print("│                                         │")
+                        print("│ Last letter:          "+playerName[len(playerName)-1]+"                 │")
+                        print("│ First letter:         "+playerName[0]+"                 │")
+                        print("│ Length of the Name:   "+ str(len(playerName)).center(2) +"                │")
+                        print("│ Lower Case:           "+playerName.lower().ljust(17)+ " │")
+                        print("│ Upper Case:           "+playerName.upper().ljust(17)+ " │")
+                        print("│ Reversing the Name:   "+playerName[::-1].ljust(17)+" │")
+                        print("│                                         │")
+                        print("│                                 x-Exit  │")
+                        print("└─────────────────────────────────────────┘")
+                        print('')
+                        utility_menu = input("  Press ENTER to select another player... ").upper()
+                        break
+                elif (playerSelected == 'X'):
+                    utility_menu = 'X'
                     break
-            elif (playerSelected == 'X'):
-                utility_menu = 'X'
-                break
 
    

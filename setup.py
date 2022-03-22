@@ -54,8 +54,6 @@ def utilities():
         match util_menu:
             case 'S':
                 selectPlayer()
-            case 'N':
-                sortByNation() 
                         
 def main():
     main_menu = ''
@@ -77,4 +75,5 @@ def main():
                 menuGoodBye()
 
 
-main()
+if __name__ == '__main__':
+    main()
