@@ -4,13 +4,6 @@ from os import system
 import csv
 import operator
 import pandas as pd
-
-#ligalist = []
-
-class Realmadrid():
-    
-    def __init__(self):
-        pass
         
 def listPlayers():
     try:

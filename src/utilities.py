@@ -4,14 +4,7 @@ from src.ligatools import *
 from src.menus import *
 import pandas as pd 
 import pyodbc
-from os import system
-import csv
-import operator
-
-class Utilities():
-    def __init__(self, value):
-        self.value = value
-      
+from os import system     
       
 def loadTable():
     #Creating connection 
