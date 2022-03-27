@@ -11,6 +11,9 @@ import csv
 #clean the screen
 system("cls")
 
+#Set SQL Server Instance
+sqlName = 'PC-MIN'
+
 # Check if log file exists    
 checklogfile()
         
@@ -52,6 +55,11 @@ def utilities():
         utilitiesMenu()
         util_menu = input("Choose the option: ").upper()
         match util_menu:
+            case 'M':
+                global sqlName
+                nueva = sqlInstance(sqlName)
+                if nueva != sqlName:
+                    sqlName = nueva
             case 'S':
                 selectPlayer()
                         

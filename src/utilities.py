@@ -4,16 +4,30 @@ from src.ligatools import *
 from src.menus import *
 import pandas as pd 
 import pyodbc
-from os import system     
-      
+from os import system    
+from setup import sqlName 
+     
 def loadTable():
     #Creating connection 
+    driver = '{ODBC Driver 17 for SQL Server}'
+    server = sqlName
+    
+    #connString = 'Driver={SQL Server}'; Server={}; Database=laligadb; Trusted_Connection=yes;'
+    
+    #print("Nueva conn: " + connString)
+    #pressAnyKey()
     try:
         print("                  Loading players from SQL Server ...")
-        conn = pyodbc.connect('Driver={SQL Server};'
-                            'Server=PC-MIN;'
+        conn = pyodbc.connect('Driver='+driver+';'
+                            'Server='+server+';'
                             'Database=laligadb;'
                             'Trusted_Connection=yes;')
+        
+        #conn = pyodbc.connect('Driver={SQL Server};'
+        #                    'Server=PC-MIN;'
+        #                    'Database=laligadb;'
+        #                    'Trusted_Connection=yes;')
+        
         printlogfile("Creating connection to SQL Server...")
         #Creating cursor   
         cursor = conn.cursor()
@@ -74,7 +88,6 @@ def selectPlayer():
 
     #Check if the dict is empty
     if ((len(playerDict)) > 0):
-        pass
         #Showing players by screen...
         system("cls")
         print("Showing players by screen...")
@@ -114,4 +127,22 @@ def selectPlayer():
                     utility_menu = 'X'
                     break
 
-   
+def sqlInstance(pcname):
+    instanceMenu(pcname)
+    global sqlName
+    nuevaInstancia = sqlName
+    instance_menu = ''
+    while (instance_menu != 'C'):
+        instance_menu = 'C'
+        cambiar = input("Choose the option: ").upper()
+        if (cambiar == 'C'):
+            printBlankLines(1)
+            nuevaInstancia = input("Select new instance name: ").upper()
+            printBlankLines(1)
+            sure = input("Are you sure, y/n: ").upper()
+            if (sure == 'Y'):                
+                sqlName = nuevaInstancia  
+    
+    pressAnyKey()
+    
+    return sqlName    
