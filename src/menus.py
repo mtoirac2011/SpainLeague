@@ -12,7 +12,7 @@ def welcomeMenu():
     print("│                                                │")
     print("│     analysis of the Spain soccer league and    │")
     print("│                                                │")
-    print("│     Real Madrd soccer team as well. You can    │")
+    print("│     Real Madrid soccer team as well. You can   │")
     print("│                                                │")
     print("│     also find unit converter and string        │")
     print("│                                                │")
