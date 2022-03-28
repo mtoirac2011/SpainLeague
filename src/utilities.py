@@ -11,23 +11,12 @@ def loadTable():
     #Creating connection 
     driver = '{ODBC Driver 17 for SQL Server}'
     server = sqlName
-    
-    #connString = 'Driver={SQL Server}'; Server={}; Database=laligadb; Trusted_Connection=yes;'
-    
-    #print("Nueva conn: " + connString)
-    #pressAnyKey()
     try:
         print("                  Loading players from SQL Server ...")
         conn = pyodbc.connect('Driver='+driver+';'
                             'Server='+server+';'
                             'Database=laligadb;'
-                            'Trusted_Connection=yes;')
-        
-        #conn = pyodbc.connect('Driver={SQL Server};'
-        #                    'Server=PC-MIN;'
-        #                    'Database=laligadb;'
-        #                    'Trusted_Connection=yes;')
-        
+                            'Trusted_Connection=yes;')      
         printlogfile("Creating connection to SQL Server...")
         #Creating cursor   
         cursor = conn.cursor()
@@ -41,7 +30,10 @@ def loadTable():
             mydict[row[0]] = row[1]
     except:
         mydict = {}
-        print("\nError creating connection ...")
+        system("cls")
+        printBlankLines(5)
+        print("\n          Error creating SQL Server connection ...")
+        printBlankLines(4)
         printlogfile("Error creating connection to SQL Server...")
         pressAnyKey()
     
@@ -50,6 +42,10 @@ def loadTable():
 def showPlayers(playerDict):
     until = len(playerDict)
     index=1
+    print()
+    print("                  List of Real Madrid Soccer Team Players")
+    print("                  ───────────────────────────────────────")
+    print()
     while index <= len(playerDict):
         indexStr = str(index).ljust(2)
         indexMasUnoStr = str(index + 1).ljust(2)
@@ -85,7 +81,6 @@ def selectPlayer():
     #Connecting to the SQL Server Database and creating Dict
     playerDict = {}
     playerDict = loadTable()
-
     #Check if the dict is empty
     if ((len(playerDict)) > 0):
         #Showing players by screen...
@@ -104,7 +99,7 @@ def selectPlayer():
                 playerSelected = input("Select a player by choosing a valid number: ").upper()
                 if (if_integer(playerSelected)):
                     if (int(playerSelected) > 0 and int(playerSelected) < 36):                    
-                        playerName = playerDict[playerSelected.ljust(2)]
+                        playerName = playerDict[playerSelected.ljust(2)]                      
                         #Process
                         system("cls")
                         playerToShow = "You have selected: " + playerName

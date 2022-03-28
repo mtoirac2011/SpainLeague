@@ -1,4 +1,5 @@
 import os
+from datetime import datetime, date
 import time
 from src.menus import *
 import re
@@ -49,9 +50,12 @@ def moreShotsPrint(ligalist):
          
 def listPlayersPrint(playerlist):
     listPlayersHeader()
+    ahora = datetime.now()
+    anoHoy = ahora.year
     try: 
         for i in range(len(playerlist)):
-            print(" " + playerlist[i][1].ljust(17), playerlist[i][2].ljust(6), playerlist[i][4].center(3))
+            birth = str(anoHoy - int(playerlist[i][4]))            
+            print(" " + playerlist[i][1].ljust(20), playerlist[i][2].ljust(6), birth.center(4))
         printlogfile("List of players was printed")
     except:
         print("Error listing players...")
