@@ -89,11 +89,41 @@ def groupByNation(nationslist):
         
     return res
 
+def nationNames(cod):
+    match cod.upper():
+        case 'AUT':
+            return 'Austria'
+        case 'BEL':
+            return 'Belgium'
+        case 'BRA':
+            return 'Brazil'        
+        case 'CRO':
+            return 'Croacia'
+        case 'DOM':
+            return 'Dominican Republic'
+        case 'ESP':
+            return 'Spain'
+        case 'FRA':
+            return 'France'
+        case 'GER':
+            return 'Germany'
+        case 'SRB':
+            return 'Serbia'       
+        case 'UKR':
+            return 'Ukraine'
+        case 'URU':
+            return 'Uruguay'     
+        case 'WAL':
+            return 'Wales' 
+                                                        
+            
 def groupByNationPrint(mytupla):
     groupNationHeader()
     try: 
         for nation in mytupla:
-            print(" " + nation[0].ljust(9), str(nation[1]).center(6))
+            pais = nationNames(nation[0].ljust(3))          
+            #print(" " + nation[0].ljust(9), str(nation[1]).center(6))
+            print(" " + pais.ljust(26), str(nation[1]).center(6))
         printlogfile("Players by nation were printed")
     except:
         print("Error printing players by by nations...")

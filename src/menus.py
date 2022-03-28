@@ -114,10 +114,10 @@ def sortByAgeHeader():
 
 def groupNationHeader():
     system("cls")
-    print("Group by nations")
-    print("┌───────────────┐")
-    print("│Nation    Count│")
-    print("└───────────────┘")    
+    print("   Real Madrid player by nations")
+    print("┌────────────────────────────────┐")
+    print("│Nation                     Count│")
+    print("└────────────────────────────────┘")    
 
 def convertMenu():
     system("cls")
