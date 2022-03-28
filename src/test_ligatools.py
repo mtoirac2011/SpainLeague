@@ -1,6 +1,6 @@
 
 import unittest
-from ligatools import farToCelcious, if_integer, milesToKm, feetToMeter, meterToCm
+from ligatools import farToCelcious, if_integer, milesToKm, feetToMeter, meterToCm, nationNames
 
 class Liga_tests(unittest.TestCase):
     
@@ -18,6 +18,9 @@ class Liga_tests(unittest.TestCase):
         
     def test_meterToCm(self):
         self.assertTrue(meterToCm(5) == '500')
+        
+    def test_nationNames(self):
+        self.assertEqual(nationNames('AUT'), 'Austria')        
         
     def test_increment(self):
         self.assertAlmostEqual(4, 4)
